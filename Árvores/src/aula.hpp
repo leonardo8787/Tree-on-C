@@ -30,11 +30,11 @@ struct Record{
 };
 typedef struct Record Record;
 
-struct heap{
+struct Tree{
 	Record reg;
 	Tree *esq, *dir;
 };
-typedef struct heap heap;
+typedef struct Tree Tree;
 
 Tree* createTree();
 void insertItem(Tree **t, Record r);

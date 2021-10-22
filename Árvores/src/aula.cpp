@@ -4,7 +4,7 @@ Tree* CreateTree(){
 	return NULL;
 }
 
-void insertItem(heap **t, Record r){
+void insertItem(Tree **t, Record r){
 
 	if(*t == NULL){
 
