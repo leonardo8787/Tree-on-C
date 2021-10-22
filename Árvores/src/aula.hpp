@@ -28,11 +28,13 @@ O pior caso para usar a árvore é quando os dados já estão ordenados
 struct Record{
 	int value;
 };
+typedef struct Record Record;
 
 struct heap{
 	Record reg;
 	Tree *esq, *dir;
 };
+typedef struct heap heap;
 
 Tree* createTree();
 void insertItem(Tree **t, Record r);

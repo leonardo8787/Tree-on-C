@@ -1,10 +1,10 @@
-#include "aula.h"
+#include "aula.hpp"
 
 Tree* CreateTree(){
 	return NULL;
 }
 
-void insertItem(Tree **t, Record r){
+void insertItem(heap **t, Record r){
 
 	if(*t == NULL){
 
