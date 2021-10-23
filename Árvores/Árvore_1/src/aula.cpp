@@ -18,13 +18,17 @@ void insertItem(Tree **t, Record r){
 
 		if(r.value < (*t)->reg.value){
 			insertItem(&(*t)->esq, r);
-			printf("esquerda: %d\n",r.value);
+			//printf("esquerda: %d\n",r.value);
 		} else if(r.value > (*t)->reg.value){
 			insertItem(&(*t)->dir, r);
-			printf("direita: %d\n",r.value);
+			//printf("direita: %d\n",r.value);
 		}
-
 	}
+}
+
+void pesquisa(Tree **t, Tree **aux, Record  r){
+	printf(&(*t)->esq, r);
+	printf(&(*t)->dir, r);
 }
 
 int main(){
@@ -43,7 +47,7 @@ int main(){
 		r.value = num;
 		t = CreateTree();
 		insertItem(&t, r);
-		printf("\n");
+		pesquisa();
 
 	}while(num != 0);
 
