@@ -12,32 +12,43 @@ void insertItem(Tree **t, Record r){
 		(*t)->esq = NULL;
 		(*t)->dir = NULL;
 		(*t)->reg = r;
+		printf("NULL\n");
 
 	} else {
 
-		if(r.value < (*t)->reg.value)
+		if(r.value < (*t)->reg.value){
 			insertItem(&(*t)->esq, r);
-
-		else if(r.value > (*t)->reg.value)
+			printf("esquerda: %d\n",r.value);
+		} else if(r.value > (*t)->reg.value){
 			insertItem(&(*t)->dir, r);
+			printf("direita: %d\n",r.value);
+		}
 
 	}
 }
 
 int main(){
 
+	int num;
 	Tree *t;
 	Record r;
 
-	t = CreateTree();
+	printf("\n\n===Árvore====\n");
+	printf("autor: Leonardo Campos\n\n\n");
 
-	r.value = 10;
-	insertItem(&t, r);
+	do{
 
-	r.value = 8;
-	insertItem(&t, r);
+		printf("Digite um valor, ou 0 para sair: \n");
+		scanf("%d", &num);
+		r.value = num;
+		t = CreateTree();
+		insertItem(&t, r);
+		printf("\n");
 
-	r.value = 10;
-	insertItem(&t, r);
+	}while(num != 0);
+
+	printf("\nFim...\n");
+	return 0;
 	
 }
+
