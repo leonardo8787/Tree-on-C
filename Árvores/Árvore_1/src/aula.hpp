@@ -27,6 +27,7 @@ O pior caso para usar a árvore é quando os dados já estão ordenados
 
 struct Record{
 	int value;
+	int key;
 };
 typedef struct Record Record;
 

@@ -26,9 +26,18 @@ void insertItem(Tree **t, Record r){
 	}
 }
 
-void pesquisa(Tree **t, Tree **aux, Record  r){
-	printf(&(*t)->esq, r);
-	printf(&(*t)->dir, r);
+void pesquisa(Tree **t, Tree **aux, Record r){
+	if(*t == NULL){
+		printf("[Erro]: No não encontrado!\n");
+		return; //quebra a recursão
+	}
+	if((*t)->reg.key > r.key){
+		pesquisa(&(*t)->esq,aux, r); return;
+	}
+	if((*t)->reg.key < r.key){
+		pesquisa(&(*t)->dir,aux, r); return;
+	}
+	*aux = *t;
 }
 
 int main(){
@@ -47,7 +56,7 @@ int main(){
 		r.value = num;
 		t = CreateTree();
 		insertItem(&t, r);
-		pesquisa();
+		pesquisa(&t, Record r);
 
 	}while(num != 0);
 
@@ -56,3 +65,22 @@ int main(){
 	
 }
 
+
+
+
+
+// método interativo
+/*
+void pesquisa(Tree **t, Tree **aux, Record r){
+	while((*t)->reg.key > r.key || (*t)->reg.key < r.key || (*t)->reg.key != NULL){
+		if((*t)->reg.key > r.key){
+			(*t) = (*t)->esq;
+		}
+		if((*t)->reg.key < r.key){
+			(*t) = (*t)->dir;
+		}
+	}
+	if(*t != NULL){
+		*aux = *t;
+	}
+}*/
