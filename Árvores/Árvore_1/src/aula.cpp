@@ -40,7 +40,7 @@ void pesquisa(Tree **t, Tree **aux, Record r){
 	*aux = *t;
 }
 
-int main(){
+int main(Tree **aux){
 
 	int num;
 	Tree *t;
@@ -56,7 +56,7 @@ int main(){
 		r.value = num;
 		t = CreateTree();
 		insertItem(&t, r);
-		pesquisa(&t, Record r);
+		pesquisa(&t, &aux, r);
 
 	}while(num != 0);
 
