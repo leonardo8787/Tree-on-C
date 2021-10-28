@@ -40,7 +40,10 @@ typedef struct Tree Tree;
 Tree* createTree();
 void insertItem(Tree **t, Record r);
 void pesquisa(Tree **t, Tree **aux, Record  r);
-
-
+void removeItem(Tree **t, Record r);
+void antecessor(Tree **t, Tree *aux);
+void inordem(Tree *t);
+void posordem(Tree *t);
+void preordem(Tree *t);
 
 #endif

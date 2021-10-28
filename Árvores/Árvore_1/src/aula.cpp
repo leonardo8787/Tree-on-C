@@ -40,6 +40,47 @@ void pesquisa(Tree **t, Tree **aux, Record r){
 	*aux = *t;
 }
 
+void antecessor(Tree **t, Tree *aux){
+	if((*t)->dir != NULL){
+		antecessor(&(*t)->dir, aux);
+		return;
+	}
+	aux->reg = (*t)->reg;
+	aux = *t;
+	*t = (*t)->esq;
+}
+
+void removeItem(Tree **t, Record r){
+	if(*t == NULL){
+		printf("Erro!!!");
+		return;
+	}
+
+	if((*t)->reg.key > r.key){
+		removeItem(&(*t)->esq, r); return;
+	}
+	if((*t)->reg.key < r.key){
+		removeItem(&(*t)->dir, r); return;
+	}
+
+	if((*t)->dir == NULL){
+		aux = *t;
+		*t = (*t)->esq;
+		free(aux);
+		return;
+	}
+
+	if((*t)->esq != NULL){
+		antecessor(&(*t)->esq, *t);
+	}
+}
+
+void inordem(Tree *t){
+	inordem(t->esq);
+	printf("%d", t->reg.key);
+	inordem(t->dir);
+}
+
 int main(){
 
 	int num;
@@ -60,7 +101,7 @@ int main(){
 
 	}while(num != 0);
 
-	pesquisa(&t, &aux, r);
+	inordem();
 	printf("\nFim...\n");
 	return 0;
 	
