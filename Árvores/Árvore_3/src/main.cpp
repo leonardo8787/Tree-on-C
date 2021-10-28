@@ -103,7 +103,6 @@ void pesquisa(Tree **t, Tree **aux, Record r){
 		printf("[ERROR]: Node not found!");
 		return;
 	}
-
 	if((*t)->reg.key > r.key){ pesquisa(&(*t)->esq, aux, r); return;}
 	if((*t)->reg.key < r.key){ pesquisa(&(*t)->dir, aux, r); return;}
 
@@ -112,16 +111,22 @@ void pesquisa(Tree **t, Tree **aux, Record r){
 
 
 int main(){
-	int reg[] = {5,3,7,2,4,6,1};
+	
 	Tree *raiz = CreateTree();
 	Tree *aux = CreateTree();
 	Record r;
+	int num;
 
-	for(int i=0; i< 7; i++){
-		r.key = reg[i];
+	printf("\nÁrvore binária em C\n\n");
+	printf("autor: Leonardo Campos\n");
+
+	do{
+		printf("Digite: ");
+		scanf("%d", &num);
+		r.key = num; 
 		r.value = 1;
 		insertTree(&raiz, r);
-	}
+	}while(num != 0);
 
 	printf("{ ");
 	showTreeInOrder(raiz);

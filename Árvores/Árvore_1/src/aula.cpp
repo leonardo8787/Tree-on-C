@@ -40,10 +40,10 @@ void pesquisa(Tree **t, Tree **aux, Record r){
 	*aux = *t;
 }
 
-int main(Tree **aux){
+int main(){
 
 	int num;
-	Tree *t;
+	Tree *t, *aux;
 	Record r;
 
 	printf("\n\n===Árvore====\n");
@@ -56,10 +56,11 @@ int main(Tree **aux){
 		r.value = num;
 		t = CreateTree();
 		insertItem(&t, r);
-		pesquisa(&t, &aux, r);
+		
 
 	}while(num != 0);
 
+	pesquisa(&t, &aux, r);
 	printf("\nFim...\n");
 	return 0;
 	
