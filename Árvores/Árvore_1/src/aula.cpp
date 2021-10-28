@@ -81,6 +81,18 @@ void inordem(Tree *t){
 	inordem(t->dir);
 }
 
+void preordem(Tree *t){
+	printf("%d", t->reg.key);
+	preordem(t->esq);
+	preordem(t->dir);
+}
+
+void posordem(Tree *t){
+	posordem(t->esq);
+	posordem(t->dir);
+	printf("%d", t->reg.key);
+}
+
 int main(){
 
 	int num;
