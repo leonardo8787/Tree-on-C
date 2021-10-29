@@ -50,7 +50,7 @@ void antecessor(Tree **t, Tree *aux){
 	*t = (*t)->esq;
 }
 
-void removeItem(Tree **t, Record r){
+void removeItem(Tree **t, Tree **aux, Record r){
 	if(*t == NULL){
 		printf("Erro!!!");
 		return;
@@ -64,9 +64,9 @@ void removeItem(Tree **t, Record r){
 	}
 
 	if((*t)->dir == NULL){
-		aux = *t;
+		*aux = *t;
 		*t = (*t)->esq;
-		free(aux);
+		free(*aux);
 		return;
 	}
 
@@ -80,18 +80,18 @@ void inordem(Tree *t){
 	printf("%d", t->reg.key);
 	inordem(t->dir);
 }
-
-void preordem(Tree *t){
+/*
+void preordem(Tree **t){
 	printf("%d", t->reg.key);
 	preordem(t->esq);
 	preordem(t->dir);
 }
 
-void posordem(Tree *t){
+void posordem(Tree **t){
 	posordem(t->esq);
 	posordem(t->dir);
 	printf("%d", t->reg.key);
-}
+}*/
 
 int main(){
 
