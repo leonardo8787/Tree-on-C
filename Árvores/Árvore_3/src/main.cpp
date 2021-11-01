@@ -119,31 +119,45 @@ int main(){
 
 	printf("\nÁrvore binária em C\n\n");
 	printf("autor: Leonardo Campos\n");
-
+	
 	do{
-		printf("Digite: ");
-		scanf("%d", &num);
-		r.key = num; 
-		r.value = 1;
-		insertTree(&raiz, r);
+	    printf("Escolha uma opção: \n");
+	    printf("0 - sair\n");
+	    printf("1 - inserir valor\n");
+	    printf("2 - remover\n");
+	    printf("3 - imprimir árvore\n");
+	    printf("4 - limpar tela\n");
+	    scanf("%d", &num);
+	    switch(num){
+	        case 0:
+	            printf("\nSaindo...\n");
+	            break;
+	        case 1:
+	            printf("\nDigite um valor: \n");
+	            scanf("%d", &num);
+	            r.key = num;
+	            r.value = 1;
+	            insertTree(&raiz, r);
+	            break;
+	        case 2:
+	            printf("\nDigite um número para remover: \n");
+	            scanf("%d", &num);
+	            r.key = num;
+	            removeTree(&raiz, r);
+	            break;
+	        case 3:
+	            printf("\nÁrvore\n");
+	            showTreeInOrder(raiz);
+	            showTreeInOrder(aux);
+	            printf("\n");
+	            break;
+	        case 4:
+	           	system("cls || clear");
+	        default:
+	            printf("\nEscolha uma opção válida!\n");
+	            break;
+	    }
 	}while(num != 0);
 
-	printf("{ ");
-	showTreeInOrder(raiz);
-	printf("}\n");
-
-	r.key = 2;
-	pesquisa(&raiz, &aux, r);
-	
-	printf("{ ");
-	showTreeInOrder(aux);
-	printf("}\n");
-
-	r.key = 3;
-	removeTree(&raiz, r);
-
-	printf("{ ");
-	showTreeInOrder(raiz);
-	printf("}\n");
-
+    return 0;
 }
