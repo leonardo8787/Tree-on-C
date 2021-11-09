@@ -14,11 +14,11 @@ int getMaxPeso(int left, int rigth){
 
 
 //acredito que o erro esteja aqui!
-void rotacaoSimplesParaDireita(Tree **t, Record r){
+void rotacaoSimplesParaDireita(Tree **t){
 	(*t)->esq = (*t)->dir;
 }
 
-void rotacaoSimplesParaEsquerda(Tree **t, Record r){
+void rotacaoSimplesParaEsquerda(Tree **t){
 	(*t)->dir = (*t)->esq;
 }
 
