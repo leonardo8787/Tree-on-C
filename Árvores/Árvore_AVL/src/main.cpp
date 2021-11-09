@@ -31,6 +31,16 @@ int getMaxPeso(int left, int rigth){
 	return rigth;
 }
 
+
+//acredito que o erro esteja aqui!
+rotacaoSimplesParaDireita(Tree **t, Record r){
+	(*t)->esq = (*t)->dir;
+}
+
+rotacaoSimplesParaEsquerda(Tree **t, Record r){
+	(*t)->dir = (*t)->esq;
+}
+
 void insertTree(Tree **t, Record r)
 {
   if(*t == NULL){
