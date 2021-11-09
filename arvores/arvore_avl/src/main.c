@@ -24,9 +24,10 @@ int main(){
 	    switch(num){
 	        case 0:
 	            printf("\nSaindo...\n");
+	            return 0;
 	            break;
 	        case 1:
-	            printf("\nDigite um valor: \n");
+	            printf("\nDigite um valor: ");
 	            scanf("%d", &num);
 	            r.key = num;
 	            r.value = 1;
@@ -40,7 +41,9 @@ int main(){
 	            break;
 	        case 3:
 	            printf("\nÁrvore\n");
+	            printf("[");
 	            showTreeInOrder(raiz);
+	            printf("]");
 	            showTreeInOrder(aux);
 	            printf("\n");
 	            break;
@@ -50,7 +53,7 @@ int main(){
 	            printf("\nEscolha uma opção válida!\n");
 	            break;
 	    }
-	}while(num != 0);
+	}while(num);
 
     return 0;
 }

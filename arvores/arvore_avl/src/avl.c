@@ -1,5 +1,9 @@
 #include "avl.h"
 
+Tree* CreateTree(){
+  return NULL;
+}
+
 int getPeso(Tree **t){
 	if(*t == NULL)
 		return -1;
@@ -57,8 +61,9 @@ void insertTree(Tree **t, Record r)
   
   }
 
-  //printf("%d\t", (*t)->reg.key);
   (*t)->peso = getMaxPeso(getPeso(&(*t)->esq), getPeso(&(*t)->dir)) + 1;
+  printf("%d", (*t)->reg.key);
+  printf(" | \n");
 }
 
 int isInTree(Tree *t, Record r) {

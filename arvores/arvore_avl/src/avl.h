@@ -17,10 +17,7 @@ struct Tree{
 	int peso;
 };
 
-Tree* CreateTree(){
-	return NULL;
-}
-
+Tree* CreateTree();
 int getPeso(Tree **t);
 int getMaxPeso(int left, int rigth);
 void rotacaoSimplesParaDireita(Tree **t);
