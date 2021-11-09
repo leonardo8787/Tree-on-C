@@ -2,6 +2,8 @@
 #include "avl.h"
 
 int main(){
+
+	system("cls || clear");
 	
 	Tree *raiz = CreateTree();
 	Tree *aux = CreateTree();

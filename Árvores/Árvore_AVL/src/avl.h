@@ -23,9 +23,10 @@ Tree* CreateTree(){
 
 int getPeso(Tree **t);
 int getMaxPeso(int left, int rigth);
-rotacaoSimplesParaDireita(Tree **t, Record r);
-rotacaoSimplesParaEsquerda(Tree **t, Record r);
+void rotacaoSimplesParaDireita(Tree **t, Record r);
+void rotacaoSimplesParaEsquerda(Tree **t, Record r);
 void insertTree(Tree **t, Record r);
+void showTreeInOrder(Tree *t);
 void antecessor(Tree **t, Tree *aux);
 void removeTree(Tree **t, Record r);
 void pesquisa(Tree **t, Tree **aux, Record r);
