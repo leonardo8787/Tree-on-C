@@ -147,7 +147,9 @@ int main(){
 	            break;
 	        case 3:
 	            printf("\nÁrvore\n");
+	            printf("[");
 	            showTreeInOrder(raiz);
+	            printf("]");
 	            showTreeInOrder(aux);
 	            printf("\n");
 	            break;
