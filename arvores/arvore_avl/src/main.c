@@ -37,14 +37,14 @@ int main(){
 	            printf("\nDigite um número para remover: \n");
 	            scanf("%d", &num);
 	            r.key = num;
-	            removeTree(&raiz, r);
+	            removeTree(&raiz, &raiz, r);
 	            break;
 	        case 3:
 	            printf("\nÁrvore\n");
 	            printf("[");
-	            showTreeInOrder(raiz);
-	            printf("]");
-	            showTreeInOrder(aux);
+	            central(raiz);
+	            printf("fim]");
+	            //showTreeInOrder(aux);
 	            printf("\n");
 	            break;
 	        case 4:
